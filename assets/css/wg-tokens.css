@@ -1,0 +1,100 @@
+/* Wild Gaze Safaris – Design Tokens */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Raleway:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-brand: 'Cinzel', Georgia, serif;
+  --gold:        #b8941a;
+  --gold-lt:     #e8b020;
+  --gold-pale:   #f5d060;
+  --orange:      #d45a00;
+  --rust:        #c0390a;
+  --olive:       #6b5a1e;
+  --dark:        #1a1408;
+  --dark2:       #26200e;
+  --dark3:       #1e1808;
+  --cream:       #fdf8ef;
+  --section-bg:  #faf6ec;
+  --card-bg:     #ffffff;
+  --card-border: #e5dcc8;
+
+  /* Improved contrast (WCAG-friendly on light backgrounds) */
+  --text-body:   #3a3220;
+  --text-light:  #524630;
+  --text-muted:  #6e5e42;
+
+  /* Hero overlay – bottom-weighted, top stays clear */
+  --wg-hero-overlay: linear-gradient(
+    to top,
+    rgba(26, 20, 8, 0.78) 0%,
+    rgba(26, 20, 8, 0.32) 42%,
+    rgba(26, 20, 8, 0.06) 68%,
+    transparent 100%
+  );
+
+  /* Card image – gradient at bottom only */
+  --wg-card-img-overlay: linear-gradient(
+    to top,
+    rgba(26, 20, 8, 0.62) 0%,
+    rgba(26, 20, 8, 0.18) 38%,
+    transparent 62%
+  );
+
+  --wg-img-filter: saturate(1.06) contrast(1.02);
+  --wg-img-filter-hover: saturate(1.12) contrast(1.04);
+
+  --wg-shadow-sm: 0 2px 12px rgba(26, 20, 8, 0.06);
+  --wg-shadow-md: 0 8px 28px rgba(26, 20, 8, 0.12);
+  --wg-shadow-lg: 0 18px 40px rgba(26, 20, 8, 0.16);
+
+  --wg-radius-cut: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+
+  --nav-h: 64px;
+  --top-h: 0px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  background: var(--dark, #1a1408);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  background: var(--cream);
+  overflow-x: clip;
+  max-width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+[class*="title"]:not([class*="logo"]):not(.wg-home-hero-title),
+[class*="heading"],
+[class*="eyebrow"]:not(.wg-home-hero-eyebrow) {
+  font-family: var(--font-display);
+}
+
+.navbar-wrap,
+.navbar-wrap .logo-text,
+.wg-home-hero,
+.wg-home-hero .wg-home-hero-title,
+.wg-home-hero .wg-home-hero-eyebrow,
+.wg-home-btn-primary,
+.wg-home-btn-outline {
+  font-family: var(--font-brand), var(--font-body);
+}

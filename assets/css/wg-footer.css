@@ -1,0 +1,324 @@
+/* Wild Gaze Safaris – global footer */
+
+.wg-site-footer {
+  background: var(--dark3, #1e1808);
+  border-top: 1px solid rgba(184, 148, 26, 0.28);
+  color: rgba(255, 255, 255, 0.55);
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+
+.wg-footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 2.5rem clamp(1.25rem, 4vw, 2.5rem) 1.5rem;
+}
+
+.wg-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  gap: 2rem 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.wg-footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 0.75rem;
+}
+
+.wg-footer-logo img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px rgba(232, 176, 32, 0.25));
+}
+
+.wg-footer-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.wg-footer-logo-name {
+  font-family: var(--font-brand, 'Cinzel', serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--gold-lt, #e8b020);
+}
+
+.wg-footer-logo-sub {
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+  margin-top: 3px;
+}
+
+.wg-footer-tagline {
+  max-width: 280px;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.48);
+  line-height: 1.65;
+}
+
+.wg-footer-nav-title {
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-lt, #e8b020);
+  margin-bottom: 0.85rem;
+}
+
+.wg-footer-nav-toggle {
+  display: none;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0;
+  border: none;
+  border-bottom: 1px solid rgba(184, 148, 26, 0.15);
+  background: none;
+  color: var(--gold-lt, #e8b020);
+  font-family: inherit;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.wg-footer-nav-toggle i {
+  font-size: 0.65rem;
+  transition: transform 0.25s ease;
+}
+
+.wg-footer-nav.is-open .wg-footer-nav-toggle i {
+  transform: rotate(180deg);
+}
+
+.wg-footer-nav ul,
+.wg-footer-contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.wg-footer-nav a,
+.wg-footer-contact-list a {
+  color: rgba(255, 255, 255, 0.52);
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.wg-footer-nav a:hover,
+.wg-footer-contact-list a:hover {
+  color: var(--gold-lt, #e8b020);
+  padding-left: 3px;
+}
+
+.wg-footer-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.78rem;
+}
+
+.wg-footer-contact-list i {
+  color: var(--gold, #b8941a);
+  width: 14px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  font-size: 0.72rem;
+}
+
+.wg-footer-social {
+  display: flex;
+  gap: 8px;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.wg-footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.wg-footer-social a:hover {
+  color: var(--gold-lt, #e8b020);
+  border-color: rgba(232, 176, 32, 0.45);
+  background: rgba(184, 148, 26, 0.1);
+  transform: translateY(-2px);
+}
+
+.wg-footer-social i {
+  font-size: 0.85rem;
+}
+
+.wg-footer-certs {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.25rem 0;
+  margin-bottom: 1.25rem;
+}
+
+.wg-footer-certs-title {
+  text-align: center;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold, #b8941a);
+  margin-bottom: 0.85rem;
+}
+
+.wg-footer-certs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+.wg-footer-cert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid rgba(184, 148, 26, 0.18);
+  border-radius: 4px;
+  background: rgba(184, 148, 26, 0.04);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.wg-footer-cert:hover {
+  border-color: rgba(232, 176, 32, 0.35);
+  background: rgba(184, 148, 26, 0.08);
+}
+
+.wg-footer-cert > i {
+  color: var(--gold-lt, #e8b020);
+  font-size: 1rem;
+  flex-shrink: 0;
+  width: 18px;
+  text-align: center;
+}
+
+.wg-footer-cert strong {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 1px;
+}
+
+.wg-footer-cert span {
+  display: block;
+  font-size: 0.625rem;
+  color: rgba(255, 255, 255, 0.42);
+  line-height: 1.35;
+}
+
+.wg-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 0.25rem;
+}
+
+.wg-footer-copy {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.38);
+  margin: 0;
+}
+
+.wg-footer-bottom-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.wg-footer-bottom-links a {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.42);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.wg-footer-bottom-links a:hover {
+  color: var(--gold-lt, #e8b020);
+}
+
+@media (max-width: 960px) {
+  .wg-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .wg-footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .wg-footer-certs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .wg-footer-inner {
+    padding-top: 1.75rem;
+  }
+
+  .wg-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .wg-footer-nav {
+    border-bottom: 1px solid rgba(184, 148, 26, 0.12);
+  }
+
+  .wg-footer-nav-toggle {
+    display: flex;
+  }
+
+  .wg-footer-nav-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  .wg-footer-nav.is-open .wg-footer-nav-panel {
+    max-height: 220px;
+    padding-bottom: 0.85rem;
+  }
+
+  .wg-footer-nav-title {
+    display: none;
+  }
+
+  .wg-footer-contact .wg-footer-nav-title {
+    display: block;
+    margin-top: 0.85rem;
+  }
+
+  .wg-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

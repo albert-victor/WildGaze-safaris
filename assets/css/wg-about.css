@@ -1,0 +1,1108 @@
+/* Wild Gaze – About Us (editorial / team life) */
+
+.wg-about-page {
+  --ab-gold: var(--gold, #b8941a);
+  --ab-gold-lt: var(--gold-lt, #e8b020);
+  --ab-orange: var(--orange, #d45a00);
+  --ab-dark: var(--dark, #1a1408);
+  --ab-cream: var(--cream, #fdf8ef);
+  --ab-muted: var(--text-muted, #6e5e42);
+  font-family: var(--font-body);
+  color: var(--text-body);
+  overflow-x: clip;
+}
+
+.wg-about-page *,
+.wg-about-page *::before,
+.wg-about-page *::after {
+  box-sizing: border-box;
+}
+
+.wg-about-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+}
+
+/* ── Stats ribbon ─────────────────────────────────────── */
+.wg-about-stats {
+  background: var(--ab-dark);
+  border-bottom: 1px solid rgba(184, 148, 26, 0.25);
+  position: relative;
+  z-index: 2;
+  margin-top: -1px;
+}
+
+.wg-about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.wg-about-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 28px clamp(16px, 3vw, 32px);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background 0.35s ease;
+}
+
+.wg-about-stat:last-child {
+  border-right: none;
+}
+
+.wg-about-stat:hover {
+  background: rgba(184, 148, 26, 0.08);
+}
+
+.wg-about-stat-icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(184, 148, 26, 0.12);
+  border: 1px solid rgba(184, 148, 26, 0.35);
+  clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  color: var(--ab-gold-lt);
+  font-size: 1.05rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.wg-about-stat:hover .wg-about-stat-icon {
+  transform: scale(1.08);
+  background: rgba(184, 148, 26, 0.22);
+}
+
+.wg-about-stat-val {
+  font-family: var(--font-brand);
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.wg-about-stat-val .suffix {
+  font-size: 0.65em;
+  color: var(--ab-gold-lt);
+}
+
+.wg-about-stat-lbl {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 4px;
+}
+
+/* ── Intro / story ────────────────────────────────────── */
+.wg-about-intro {
+  padding: clamp(64px, 8vw, 100px) 0;
+  background: var(--ab-cream);
+}
+
+.wg-about-intro-head {
+  max-width: 680px;
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+.wg-about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-brand);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--ab-orange);
+  margin-bottom: 14px;
+}
+
+.wg-about-eyebrow i {
+  font-size: 0.75rem;
+}
+
+.wg-about-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--ab-orange);
+  opacity: 0.75;
+}
+
+.wg-about-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.12;
+  color: var(--ab-dark);
+  margin-bottom: 18px;
+}
+
+.wg-about-title em {
+  font-style: italic;
+  color: var(--ab-gold);
+}
+
+.wg-about-lead {
+  font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+  line-height: 1.85;
+  color: var(--ab-muted);
+}
+
+.wg-about-intro-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 56px);
+  align-items: start;
+}
+
+.wg-about-prose p {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  margin-bottom: 1.1em;
+  color: var(--text-body);
+}
+
+.wg-about-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.wg-about-pill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.wg-about-pill {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  background: #fff;
+  border: 1px solid var(--card-border);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: default;
+}
+
+.wg-about-pill:hover {
+  transform: translateX(6px);
+  box-shadow: var(--wg-shadow-md);
+  border-color: rgba(184, 148, 26, 0.45);
+}
+
+.wg-about-pill i {
+  color: var(--ab-gold);
+  font-size: 1.1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+  width: 22px;
+  text-align: center;
+}
+
+.wg-about-pill strong {
+  display: block;
+  font-family: var(--font-brand);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ab-dark);
+  margin-bottom: 4px;
+}
+
+.wg-about-pill span {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--ab-muted);
+}
+
+.wg-about-pill a {
+  color: var(--ab-orange);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── Main photo mosaic ────────────────────────────────── */
+.wg-about-mosaic {
+  padding: 0 0 clamp(64px, 8vw, 96px);
+  background: var(--ab-cream);
+}
+
+.wg-about-mosaic-label {
+  text-align: center;
+  margin-bottom: clamp(28px, 4vw, 40px);
+}
+
+.wg-about-mosaic-label span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-brand);
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ab-gold);
+  padding: 10px 22px;
+  border: 1px solid rgba(184, 148, 26, 0.35);
+  background: rgba(184, 148, 26, 0.06);
+}
+
+.wg-about-mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, minmax(220px, 28vw));
+  gap: clamp(10px, 1.5vw, 16px);
+}
+
+.wg-about-mosaic-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  cursor: zoom-in;
+  min-height: 180px;
+}
+
+.wg-about-mosaic-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: var(--wg-img-filter);
+  transition: transform 0.7s cubic-bezier(0.22, 0.68, 0, 1.05), filter 0.4s;
+}
+
+.wg-about-mosaic-item:hover img {
+  transform: scale(1.06);
+  filter: var(--wg-img-filter-hover);
+}
+
+.wg-about-mosaic-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26, 20, 8, 0.55) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.wg-about-mosaic-item:hover::after {
+  opacity: 1;
+}
+
+.wg-about-mosaic-cap {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 2;
+  font-family: var(--font-brand);
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.wg-about-mosaic-item:hover .wg-about-mosaic-cap {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wg-about-mosaic-item--hero {
+  grid-column: 1 / 8;
+  grid-row: 1 / 3;
+}
+
+.wg-about-mosaic-item--tall {
+  grid-column: 8 / 13;
+  grid-row: 1 / 2;
+}
+
+.wg-about-mosaic-item--wide {
+  grid-column: 8 / 13;
+  grid-row: 2 / 3;
+}
+
+.wg-about-mosaic-item--half {
+  grid-column: span 6;
+  grid-row: auto;
+}
+
+/* ── Director spotlight ───────────────────────────────── */
+.wg-about-director {
+  background: var(--ab-dark);
+  color: #fff;
+  padding: clamp(72px, 9vw, 110px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.wg-about-director::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 85% 50%, rgba(184, 148, 26, 0.12) 0%, transparent 70%),
+    url('../pattern overlay.jpg') center / 400px repeat;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.wg-about-director-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) 1fr;
+  gap: clamp(36px, 6vw, 72px);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.wg-about-director-photo {
+  position: relative;
+}
+
+.wg-about-director-frame {
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.wg-about-director-frame img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+  filter: var(--wg-img-filter);
+  transition: transform 0.6s ease;
+  cursor: zoom-in;
+}
+
+.wg-about-director-photo:hover .wg-about-director-frame img {
+  transform: scale(1.03);
+}
+
+.wg-about-director-badge {
+  position: absolute;
+  bottom: -16px;
+  right: -12px;
+  background: linear-gradient(135deg, var(--ab-orange), var(--rust, #c0390a));
+  padding: 14px 20px;
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--wg-shadow-lg);
+}
+
+.wg-about-director-badge i {
+  font-size: 1.1rem;
+}
+
+.wg-about-director-badge span {
+  font-family: var(--font-brand);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.wg-about-director-content .wg-about-eyebrow {
+  color: var(--ab-gold-lt);
+}
+
+.wg-about-director-content .wg-about-eyebrow::before {
+  background: var(--ab-gold-lt);
+}
+
+.wg-about-director-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.wg-about-director-role {
+  font-family: var(--font-brand);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ab-gold-lt);
+  margin-bottom: 24px;
+}
+
+.wg-about-quote {
+  position: relative;
+  padding: 24px 0 24px 28px;
+  border-left: 3px solid var(--ab-gold);
+  margin-bottom: 24px;
+}
+
+.wg-about-quote i.fa-quote-left {
+  position: absolute;
+  left: -14px;
+  top: 18px;
+  font-size: 1.4rem;
+  color: var(--ab-gold);
+  background: var(--ab-dark);
+  padding: 0 4px;
+}
+
+.wg-about-quote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  font-style: italic;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.wg-about-director-bio {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.62);
+  margin-bottom: 28px;
+}
+
+.wg-about-social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.wg-about-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid rgba(184, 148, 26, 0.35);
+  color: var(--ab-gold-lt);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.wg-about-social-link:hover {
+  background: var(--ab-gold);
+  color: var(--ab-dark);
+  transform: translateY(-2px);
+}
+
+/* ── Team life ────────────────────────────────────────── */
+.wg-about-team {
+  padding: clamp(72px, 9vw, 108px) 0;
+  background: linear-gradient(180deg, #fff 0%, var(--ab-cream) 100%);
+}
+
+.wg-about-section-head {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto clamp(48px, 6vw, 64px);
+}
+
+.wg-about-section-head .wg-about-title {
+  margin-bottom: 12px;
+}
+
+.wg-about-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.5vw, 24px);
+}
+
+.wg-about-team-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  aspect-ratio: 3 / 4;
+  cursor: zoom-in;
+}
+
+.wg-about-team-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: var(--wg-img-filter);
+  transition: transform 0.65s cubic-bezier(0.22, 0.68, 0, 1.05);
+}
+
+.wg-about-team-card:hover img {
+  transform: scale(1.08);
+}
+
+.wg-about-team-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26, 20, 8, 0.82) 0%, rgba(26, 20, 8, 0.1) 55%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  transition: background 0.35s ease;
+}
+
+.wg-about-team-card:hover .wg-about-team-overlay {
+  background: linear-gradient(to top, rgba(26, 20, 8, 0.92) 0%, rgba(26, 20, 8, 0.35) 60%, transparent 100%);
+}
+
+.wg-about-team-overlay i {
+  font-size: 1.2rem;
+  color: var(--ab-gold-lt);
+  margin-bottom: 8px;
+  transform: translateY(12px);
+  opacity: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.wg-about-team-card:hover .wg-about-team-overlay i {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.wg-about-team-overlay h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.wg-about-team-overlay p {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+}
+
+/* ── Promise tabs ─────────────────────────────────────── */
+.wg-about-promise {
+  padding: clamp(64px, 8vw, 96px) 0;
+  background: var(--ab-dark);
+}
+
+.wg-about-promise .wg-about-section-head .wg-about-title {
+  color: #fff;
+}
+
+.wg-about-promise .wg-about-lead {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.wg-about-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.wg-about-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.55);
+  font-family: var(--font-brand);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.28s ease;
+  clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+}
+
+.wg-about-tab i {
+  font-size: 0.85rem;
+}
+
+.wg-about-tab:hover {
+  border-color: rgba(184, 148, 26, 0.45);
+  color: var(--ab-gold-lt);
+}
+
+.wg-about-tab.is-active {
+  background: linear-gradient(135deg, var(--ab-orange), var(--rust, #c0390a));
+  border-color: transparent;
+  color: #fff;
+}
+
+.wg-about-tab-panels {
+  position: relative;
+  min-height: 200px;
+}
+
+.wg-about-tab-panel {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  animation: wg-ab-fade 0.45s ease;
+}
+
+.wg-about-tab-panel.is-active {
+  display: grid;
+}
+
+@keyframes wg-ab-fade {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.wg-about-tab-panel h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.wg-about-tab-panel p {
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.62);
+  margin-bottom: 12px;
+}
+
+.wg-about-tab-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+
+.wg-about-tab-panel li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.72);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.wg-about-tab-panel li i {
+  color: var(--ab-gold-lt);
+  width: 18px;
+  text-align: center;
+}
+
+.wg-about-tab-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wg-about-tab-icon-ring {
+  width: clamp(140px, 22vw, 200px);
+  height: clamp(140px, 22vw, 200px);
+  border-radius: 50%;
+  border: 2px solid rgba(184, 148, 26, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.wg-about-tab-panel.is-active .wg-about-tab-icon-ring {
+  animation: wg-ab-pulse 2.5s ease infinite;
+}
+
+@keyframes wg-ab-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(184, 148, 26, 0.25); }
+  50% { box-shadow: 0 0 0 18px rgba(184, 148, 26, 0); }
+}
+
+.wg-about-tab-icon-ring i {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--ab-gold-lt);
+}
+
+/* ── Behind the scenes ────────────────────────────────── */
+.wg-about-bts {
+  padding: clamp(72px, 9vw, 108px) 0;
+  background: #f3ece0;
+}
+
+.wg-about-bts-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(16px, 2.5vw, 24px);
+}
+
+.wg-about-bts-main {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  cursor: zoom-in;
+}
+
+.wg-about-bts-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 420px;
+  filter: var(--wg-img-filter);
+  transition: transform 0.7s ease;
+}
+
+.wg-about-bts-main:hover img {
+  transform: scale(1.04);
+}
+
+.wg-about-bts-stack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.5vw, 24px);
+}
+
+.wg-about-bts-stack-item {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 190px;
+  cursor: zoom-in;
+}
+
+.wg-about-bts-stack-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 190px;
+  filter: var(--wg-img-filter);
+  transition: transform 0.6s ease;
+}
+
+.wg-about-bts-stack-item:hover img {
+  transform: scale(1.05);
+}
+
+.wg-about-bts-label {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(26, 20, 8, 0.75);
+  backdrop-filter: blur(6px);
+  padding: 8px 14px;
+  font-family: var(--font-brand);
+  font-size: 0.52rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ab-gold-lt);
+}
+
+/* ── Gallery ──────────────────────────────────────────── */
+.wg-about-gallery-sec {
+  padding: clamp(72px, 9vw, 108px) 0;
+  background: var(--ab-cream);
+}
+
+.wg-about-gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.wg-about-gf-btn {
+  padding: 10px 18px;
+  background: #fff;
+  border: 1px solid var(--card-border);
+  font-family: var(--font-brand);
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ab-muted);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.wg-about-gf-btn i {
+  font-size: 0.75rem;
+}
+
+.wg-about-gf-btn:hover,
+.wg-about-gf-btn.is-active {
+  background: var(--ab-dark);
+  border-color: var(--ab-dark);
+  color: var(--ab-gold-lt);
+}
+
+.wg-about-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: clamp(12px, 2vw, 18px);
+}
+
+.wg-about-gallery-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  cursor: zoom-in;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.wg-about-gallery-item.is-hidden {
+  opacity: 0;
+  transform: scale(0.92);
+  position: absolute;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.wg-about-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: var(--wg-img-filter);
+  transition: transform 0.55s ease;
+}
+
+.wg-about-gallery-item:hover img {
+  transform: scale(1.07);
+}
+
+.wg-about-gallery-item::after {
+  content: '\f065';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 20, 8, 0.65);
+  color: #fff;
+  font-size: 0.65rem;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.wg-about-gallery-item:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.wg-about-gallery-cap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 12px 14px;
+  background: linear-gradient(to top, rgba(26, 20, 8, 0.78), transparent);
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.85);
+  transform: translateY(100%);
+  transition: transform 0.35s ease;
+}
+
+.wg-about-gallery-item:hover .wg-about-gallery-cap {
+  transform: translateY(0);
+}
+
+/* ── CTA band ─────────────────────────────────────────── */
+.wg-about-cta {
+  background: linear-gradient(135deg, var(--ab-orange) 0%, var(--rust, #c0390a) 100%);
+  padding: clamp(48px, 6vw, 72px) 0;
+  text-align: center;
+}
+
+.wg-about-cta-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.wg-about-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.wg-about-cta p {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 28px;
+  line-height: 1.65;
+}
+
+.wg-about-cta-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.wg-about-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-family: var(--font-brand);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, gap 0.25s ease;
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+
+.wg-about-btn--light {
+  background: #fff;
+  color: var(--ab-dark);
+}
+
+.wg-about-btn--light:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  gap: 14px;
+}
+
+.wg-about-btn--ghost {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+}
+
+.wg-about-btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+  gap: 14px;
+}
+
+/* ── Responsive ───────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .wg-about-mosaic-grid {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .wg-about-mosaic-item--hero,
+  .wg-about-mosaic-item--tall,
+  .wg-about-mosaic-item--wide,
+  .wg-about-mosaic-item--half {
+    grid-column: span 1;
+    grid-row: auto;
+    min-height: 240px;
+  }
+
+  .wg-about-mosaic-item--hero {
+    grid-column: 1 / -1;
+    min-height: 320px;
+  }
+
+  .wg-about-director-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .wg-about-tab-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .wg-about-tab-visual {
+    order: -1;
+  }
+
+  .wg-about-bts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .wg-about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wg-about-stat:nth-child(2) {
+    border-right: none;
+  }
+
+  .wg-about-stat:nth-child(1),
+  .wg-about-stat:nth-child(2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .wg-about-intro-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .wg-about-team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wg-about-team-card {
+    aspect-ratio: 16 / 10;
+  }
+
+  .wg-about-mosaic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wg-about-mosaic-item--hero {
+    min-height: 280px;
+  }
+
+  .wg-about-tabs {
+    gap: 6px;
+  }
+
+  .wg-about-tab {
+    padding: 10px 14px;
+    font-size: 0.52rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wg-about-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wg-about-stat {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .wg-about-stat:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wg-about-tab-panel.is-active .wg-about-tab-icon-ring {
+    animation: none;
+  }
+
+  .wg-about-mosaic-item img,
+  .wg-about-team-card img,
+  .wg-about-gallery-item img {
+    transition: none;
+  }
+}

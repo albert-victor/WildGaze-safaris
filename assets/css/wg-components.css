@@ -1,0 +1,544 @@
+/* Wild Gaze Safaris – Global Components & Overrides */
+
+/* ── Cultural pattern backgrounds (light sections) ─────────── */
+.wg-shortcuts,
+.wg-tzh,
+.wg-kilipromo,
+.wg-zan-intro,
+section[class*="-exp"],
+section[class*="-stone"],
+section[class*="-packages"],
+.wg-birding,
+.wg-itin,
+.wg-about,
+.wg-faq,
+.wg-contact,
+.wg-book,
+.wg-pattern-bg {
+  position: relative;
+  isolation: isolate;
+}
+
+.wg-shortcuts::before,
+.wg-tzh::before,
+.wg-kilipromo::before,
+.wg-zan-intro::before,
+section[class*="-exp"]::before,
+section[class*="-stone"]::before,
+section[class*="-packages"]::before,
+.wg-birding::before,
+.wg-itin::before,
+.wg-about::before,
+.wg-faq::before,
+.wg-contact::before,
+.wg-book::before,
+.wg-pattern-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.02;
+  background-image: url('../pattern%20overlay.jpg');
+  background-repeat: repeat;
+  background-size: 420px auto;
+  background-position: center top;
+}
+
+.wg-shortcuts::after,
+.wg-tzh::after,
+.wg-zan-intro::after,
+section[class*="-exp"]::after,
+section[class*="-stone"]::after,
+section[class*="-packages"]::after,
+.wg-birding::after,
+.wg-itin::after,
+.wg-pattern-bg::after {
+  content: none;
+}
+
+.wg-shortcuts > *,
+.wg-tzh > *,
+.wg-kilipromo > *,
+.wg-zan-intro > *,
+section[class*="-exp"] > *,
+section[class*="-packages"] > *,
+.wg-birding > *,
+.wg-itin > *,
+.wg-pattern-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Brighter, airier light sections (explicit – never override dark intros) */
+.wg-shortcuts,
+.wg-zan-intro,
+section[class*="-exp"],
+section[class*="-stone"],
+section[class*="-packages"],
+.wg-birding,
+.wg-itin,
+.wg-about,
+.wg-faq,
+.wg-contact,
+.wg-book {
+  background: var(--section-bg) !important;
+}
+
+.wg-zan-intro {
+  background: var(--cream) !important;
+}
+
+/* ── Hero image brightness fix ─────────────────────────────── */
+.wg-zan-hero-img,
+.wg-kili-hero-img,
+.wg-pemba-hero-img,
+.wg-tz-hero-bg,
+[class*="-hero-img"]:not(.wg-home-hero-slide),
+[class*="-hero-bg"]:not(.wg-home-hero-slide),
+.wg-ph-bg,
+.wg-kilipromo-img-wrap img {
+  filter: var(--wg-img-filter) !important;
+}
+
+.wg-home-hero-slide img,
+.wg-home-hero-slide.active img {
+  filter: var(--wg-img-filter) !important;
+}
+
+/* ── Hero overlay fix ──────────────────────────────────────── */
+.wg-zan-hero-overlay,
+.wg-kili-hero-overlay,
+.wg-pemba-hero-overlay,
+.wg-tz-hero-overlay,
+[class*="-hero-overlay"]:not(.wg-home-hero-overlay) {
+  background: var(--wg-hero-overlay) !important;
+}
+
+.wg-home-hero-overlay {
+  background: var(--wg-hero-overlay) !important;
+}
+
+/* Remove triple stacking on safaris hero */
+.wg-tz-hero-bg::before,
+.wg-tz-hero-bg::after {
+  display: none !important;
+}
+
+/* Page header overlay */
+.wg-ph-bg::after {
+  background:
+    var(--wg-hero-overlay),
+    radial-gradient(ellipse 70% 50% at 30% 80%, rgba(184, 148, 26, 0.08) 0%, transparent 65%) !important;
+}
+
+/* ── Card image fix ────────────────────────────────────────── */
+.wg-tzh-img-wrap img,
+.wg-tz-img-wrap img,
+.wg-zan-exp-img img,
+.wg-kili-card .wg-kili-img img,
+.wg-card .wg-card-img img,
+[class*="-img-wrap"] img,
+[class*="-exp-img"] img,
+[class*="-card"] [class*="img"] img {
+  filter: var(--wg-img-filter) !important;
+}
+
+.wg-tzh-img-wrap::after,
+.wg-tz-img-wrap::after,
+.wg-zan-exp-img::after,
+[class*="-img-wrap"]::after,
+[class*="-exp-img"]::after {
+  background: var(--wg-card-img-overlay) !important;
+}
+
+.wg-tzh-card:hover .wg-tzh-img-wrap img,
+.wg-tz-card:hover .wg-tz-img-wrap img,
+.wg-zan-exp-card:hover .wg-zan-exp-img img,
+[class*="-card"]:hover [class*="img"] img {
+  filter: var(--wg-img-filter-hover) !important;
+}
+
+/* Kilipromo side panel */
+.wg-kilipromo-img-wrap::after {
+  background: linear-gradient(
+    to right,
+    transparent 50%,
+    rgba(26, 20, 8, 0.35) 82%,
+    var(--dark) 100%
+  ) !important;
+}
+
+.wg-kilipromo-img-wrap img {
+  filter: var(--wg-img-filter) !important;
+}
+
+/* ── Contrast fixes ────────────────────────────────────────── */
+[class*="-hero-sub"],
+[class*="-intro-text"],
+[class*="-desc"],
+[class*="-text"],
+[class*="-lead"],
+[class*="-park-text"],
+[class*="-hi-text"],
+[class*="-check-item"],
+[class*="-highlight"],
+[class*="-info-card-text"],
+[class*="-section-sub"],
+.wg-shortcut-text {
+  color: var(--text-light) !important;
+}
+
+[class*="-info-card-text"],
+[class*="-dark-list-item"],
+.wg-tzh-info-card-text,
+.wg-tz-info-card-text {
+  color: rgba(240, 232, 208, 0.88) !important;
+}
+
+/* Dark section body copy – stronger contrast */
+.wg-tz-intro-body p,
+.wg-tzh-intro-text,
+.wg-kili-intro-body p,
+[class*="-hero-sub"] {
+  color: rgba(240, 232, 208, 0.82) !important;
+}
+
+/* Light box / container labels */
+[class*="-white-card-title"],
+[class*="-stat-card-title"],
+[class*="-info-card-title"]:not([class*="dark"]) {
+  color: var(--dark) !important;
+}
+
+[class*="-stat"] .lbl,
+[class*="-trust-lbl"],
+[class*="-mstat"] .lbl {
+  color: var(--text-muted) !important;
+}
+
+/* White cards – stronger borders & shadow */
+[class*="-white-card"],
+[class*="-info-card"]:not([class*="dark"]),
+[class*="-stat-card"],
+.wg-shortcut-card,
+.wg-tzh-card,
+.wg-tz-card,
+.wg-zan-exp-card {
+  background: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+  box-shadow: var(--wg-shadow-sm);
+}
+
+[class*="-card"]:hover,
+.wg-shortcut-card:hover {
+  box-shadow: var(--wg-shadow-md) !important;
+}
+
+/* ── Scroll reveal ─────────────────────────────────────────── */
+.navbar-wrap,
+.navbar-wrap a,
+.navbar-wrap button,
+.mobile-drawer,
+.mobile-drawer a {
+  opacity: 1 !important;
+  transform: none !important;
+  pointer-events: auto !important;
+}
+
+.wg-reveal,
+.wg-reveal-left,
+.wg-reveal-right,
+.wg-reveal-scale,
+[class*="-card"]:not(.no-reveal),
+.wg-shortcut-card {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wg-reveal-left  { transform: translateX(-28px); }
+.wg-reveal-right { transform: translateX(28px); }
+.wg-reveal-scale { transform: scale(0.97); }
+
+.wg-revealed,
+[class*="-card"].reveal,
+[class*="-card"].wg-revealed,
+.wg-shortcut-card.wg-revealed {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wg-reveal,
+  .wg-reveal-left,
+  .wg-reveal-right,
+  .wg-reveal-scale,
+  [class*="-card"],
+  .wg-shortcut-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ── Homepage shortcut image cards ─────────────────────────── */
+.wg-shortcut-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important;
+  overflow: hidden;
+  clip-path: var(--wg-radius-cut);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.wg-shortcut-card:hover {
+  transform: translateY(-6px);
+}
+
+.wg-shortcut-img {
+  position: relative;
+  height: 168px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.wg-shortcut-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: var(--wg-img-filter);
+  transition: transform 0.55s cubic-bezier(0.22, 0.68, 0, 1.05), filter 0.3s;
+}
+
+.wg-shortcut-card:hover .wg-shortcut-img img {
+  transform: scale(1.06);
+  filter: var(--wg-img-filter-hover);
+}
+
+.wg-shortcut-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--wg-card-img-overlay);
+  pointer-events: none;
+}
+
+.wg-shortcut-body {
+  padding: 24px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: var(--card-bg);
+}
+
+.wg-shortcut-card .wg-shortcut-icon {
+  display: none;
+}
+
+.wg-shortcut-card .wg-shortcut-title {
+  margin-bottom: 8px;
+}
+
+.wg-shortcut-card .wg-shortcut-text {
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+/* ── Lightbox ──────────────────────────────────────────────── */
+.wg-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(10, 8, 4, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s;
+  backdrop-filter: blur(8px);
+}
+
+.wg-lightbox-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.wg-lightbox-stage {
+  position: relative;
+  max-width: min(1100px, 96vw);
+  max-height: 88vh;
+}
+
+.wg-lightbox-stage img {
+  max-width: 100%;
+  max-height: 88vh;
+  object-fit: contain;
+  display: block;
+  border: 1px solid rgba(184, 148, 26, 0.35);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.wg-lightbox-caption {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  margin-top: 14px;
+}
+
+.wg-lightbox-close,
+.wg-lightbox-prev,
+.wg-lightbox-next {
+  position: absolute;
+  background: rgba(26, 20, 8, 0.75);
+  border: 1px solid rgba(184, 148, 26, 0.4);
+  color: var(--gold-lt);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.2s, border-color 0.2s;
+  clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+}
+
+.wg-lightbox-close:hover,
+.wg-lightbox-prev:hover,
+.wg-lightbox-next:hover {
+  background: rgba(184, 148, 26, 0.25);
+  border-color: var(--gold-lt);
+}
+
+.wg-lightbox-close {
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+}
+
+.wg-lightbox-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+.wg-lightbox-next { right: 16px; top: 50%; transform: translateY(-50%); }
+
+a.wg-lightbox,
+img.wg-lightbox,
+.wg-gallery-item {
+  cursor: zoom-in;
+}
+
+/* Gallery grid (auto-enhance intro image stacks) */
+.wg-zan-intro-img-wrap img,
+.wg-zan-intro-img-main {
+  cursor: zoom-in;
+}
+
+/* Navbar shrink on scroll */
+.navbar-wrap.is-scrolled {
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.45);
+}
+
+.navbar-wrap.is-scrolled .navbar {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+/* ── Page detail typography (reference-style) ─────────────── */
+.wg-page-header,
+.wg-itin,
+.wg-about,
+.wg-faq,
+.wg-contact,
+.wg-book,
+section[class^="wg-"]:not(.wg-home-hero):not(.wg-home-trust),
+section[class*=" wg-"]:not(.wg-home-hero):not(.wg-home-trust) {
+  font-family: var(--font-body) !important;
+}
+
+.wg-ph-title,
+.wg-ph-eyebrow,
+.wg-ph-breadcrumb,
+.wg-ph-cta,
+.wg-itin-sec-title,
+.wg-itin-tab-btn,
+.wg-itin-book-btn,
+.wg-itin-day-title,
+.wg-itin-other-routes-title,
+.wg-itin-altitude-title,
+[class*="-sec-title"],
+[class*="-sec-eyebrow"],
+[class*="-hero-title"]:not(.wg-home-hero-title),
+[class*="-page-title"],
+[class*="-intro-title"],
+[class*="-lead"]:not(.wg-home-hero-sub),
+.wg-route-link-name,
+.wg-tz-sec-title,
+.wg-tzh-sec-title,
+.wg-kili-sec-title,
+.wg-zan-sec-title,
+.wg-about-sec-title,
+.wg-rev-sec-title {
+  font-family: var(--font-display) !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.wg-ph-sub,
+.wg-itin-body,
+.wg-itin-pane,
+.wg-itin-day-text,
+[class*="-intro-text"],
+[class*="-desc"],
+[class*="-body"] p,
+[class*="-text"]:not(.wg-footer-logo-text):not(.wg-home-brand):not([class*="logo"]) {
+  font-family: var(--font-body) !important;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+.wg-ph-eyebrow,
+[class*="-sec-eyebrow"],
+[class*="-eyebrow"]:not(.wg-home-hero-eyebrow) {
+  font-family: var(--font-body) !important;
+  font-size: 0.6875rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.16em !important;
+}
+
+.wg-ph-breadcrumb {
+  font-family: var(--font-body) !important;
+  font-size: 0.625rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.12em !important;
+}
+
+.wg-itin-tab-btn,
+.wg-itin-book-btn,
+.wg-ph-cta,
+[class*="-cta"]:not(.wg-home-btn-primary):not(.wg-home-btn-outline):not(.wg-tz-cta):not(.wg-tzh-cta):not(.wg-kili-cta) {
+  font-family: var(--font-body) !important;
+  font-size: 0.6875rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+}
+
+/* Hide legacy inline footers if any remain */
+.site-footer {
+  display: none !important;
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 560px) {
+  .wg-shortcut-img { height: 140px; }
+  .wg-lightbox-prev { left: 8px; }
+  .wg-lightbox-next { right: 8px; }
+}

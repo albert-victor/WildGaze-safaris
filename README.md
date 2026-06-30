@@ -107,16 +107,20 @@ flowchart TD
 
 ## Local Development
 
+Requires [Node.js](https://nodejs.org) (for `npx`).
+
 ```powershell
 cd c:\Users\STACK_OVERFLOW\Desktop\wildgaze
 
-# Option A — open directly
-start index.html
-
-# Option B — local server (recommended for relative paths)
-python -m http.server 8080
+# Recommended — local server via npx
+npm run dev
 # → http://localhost:8080
+
+# Or run directly without npm script
+npx serve . -l 8080
 ```
+
+Alternative: open `index.html` directly in the browser (some assets may behave differently without a server).
 
 ---
 
@@ -144,6 +148,7 @@ wildgaze/
 │   ├── mobirise/
 │   ├── theme/
 │   └── web/               # jQuery
+├── package.json           # npm run dev → npx serve
 ├── README.md
 └── .gitignore
 ```

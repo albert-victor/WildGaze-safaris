@@ -17,5 +17,5 @@ desktop.ini
 .env
 .env.*
 
-# Local server
-.python-version
+# Node (npx cache only — no node_modules in this project)
+node_modules/

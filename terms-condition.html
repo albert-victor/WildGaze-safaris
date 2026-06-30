@@ -11,487 +11,28 @@
   
   
   <title>Terms and Condition | Wild Gaze Safaris</title>
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/tether/tether.min.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap"></noscript>
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap"></noscript>
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Caladea:400,400i,700,700i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caladea:400,400i,700,700i&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=f4LnD0"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=f4LnD0" type="text/css">
+  <link rel="stylesheet" href="assets/css/wg-tokens.css">
+  <link rel="stylesheet" href="assets/css/wg-components.css">
 
   
   
   
 
+    <link rel="stylesheet" href="assets/css/wg-footer.css">
+<link rel="stylesheet" href="assets/css/wg-navbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  /* Scoped reset: only affects elements inside the navbar component,
-     NOT the whole document/body, so it won't fight with other page styles. */
-  .navbar-wrap, .topbar,
-  .navbar-wrap *, .navbar-wrap *::before, .navbar-wrap *::after,
-  .topbar *, .topbar *::before, .topbar *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  :root {
-    --gold:      #b8941a;
-    --gold-lt:   #e8b020;
-    --gold-pale: #f5d060;
-    --orange:    #d45a00;
-    --rust:      #c0390a;
-    --olive:     #6b5a1e;
-    --dark:      #1a1408;
-    --dark2:     #26200e;
-    --cream:     #fdf6e3;
-    --text-nav:  #ffffff;
-    --nav-h:     52px;
-    --top-h:     48px;
-  }
-
-	.navbar-wrap,
-	.navbar-wrap * {
-	font-family: 'Raleway', sans-serif;
-	}
-
-  /* ─── TOP BAR ─────────────────────────────────────────────── */
-  .topbar {
-    background: var(--dark);
-    height: var(--top-h);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 32px;
-    padding: 0 40px;
-    border-bottom: 1px solid rgba(184,148,26,.25);
-  }
-  .topbar-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #cbb870;
-    font-size: .78rem;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
-    letter-spacing: .06em;
-  }
-  .topbar-item svg { opacity: .85; flex-shrink: 0; }
-  .topbar-item span.label { color: #fff; font-weight: 600; }
-  .topbar-item span.sub   { color: #9a8650; font-size: .72rem; }
-  .topbar-item .stack { display: flex; flex-direction: column; line-height: 1.3; }
-  .topbar .book-btn {
-    background: linear-gradient(135deg, var(--orange) 0%, var(--rust) 100%);
-    color: #fff;
-    font-family: 'Cinzel', serif;
-    font-size: .7rem;
-    font-weight: 700;
-    letter-spacing: .14em;
-    padding: 8px 22px;
-    text-decoration: none;
-    text-transform: uppercase;
-    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
-    transition: filter .2s;
-  }
-  .topbar .book-btn:hover { filter: brightness(1.15); }
-
-  /* ─── MAIN NAV WRAPPER ────────────────────────────────────── */
-  /*  FIX: overflow must be visible so dropdowns escape the wrapper  */
-  .navbar-wrap {
-    background: var(--dark2);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 2px solid var(--gold);
-    box-shadow: 0 4px 24px rgba(0,0,0,.55);
-    overflow: visible;   /* ← KEY FIX */
-  }
-
-  /* ─── LOGO + NAV ROW ──────────────────────────────────────── */
-  .navbar {
-    max-width: 1280px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    height: var(--nav-h);
-    padding: 0 32px;
-    gap: 0;
-    overflow: visible;   /* ← KEY FIX */
-    position: relative;  /* establishes stacking context cleanly */
-  }
-
-  .logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; margin-right: auto; }
-  .logo-wrap img { height: 40px; width: 40px; object-fit: contain; filter: drop-shadow(0 0 6px rgba(232,176,32,.4)); }
-  .logo-text { display: flex; flex-direction: column; line-height: 1; }
-  .logo-text .name { font-family: 'Cinzel', serif; color: var(--gold-lt); font-size: .95rem; font-weight: 700; letter-spacing: .1em; }
-  .logo-text .sub  { font-family: 'Raleway', sans-serif; color: #9a8650; font-size: .55rem; letter-spacing: .22em; text-transform: uppercase; margin-top: 2px; }
-
-  /* ─── NAV LINKS ───────────────────────────────────────────── */
-  .nav-list {
-    list-style: none;
-    display: flex;
-    align-items: stretch;
-    height: 100%;
-  }
-
-  .nav-item {
-    position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
-
-  .nav-link {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    height: 100%;
-    padding: 0 14px;
-    color: #e0d4a8;
-    font-family: 'Raleway', sans-serif;
-    font-size: .7rem;
-    font-weight: 700;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    white-space: nowrap;
-    border-bottom: 2px solid transparent;
-    transition: color .2s, border-color .2s;
-  }
-  .nav-link svg { transition: transform .2s; opacity: .7; }
-  .nav-item:hover > .nav-link { color: var(--gold-lt); border-bottom-color: var(--gold-lt); }
-  .nav-item:hover > .nav-link svg { transform: rotate(180deg); opacity: 1; }
-
-  /* ─── DROPDOWN / MEGA SHARED ─────────────────────────────── */
-  .dropdown-panel {
-    display: none;
-    position: absolute;
-    top: calc(100% + 2px); /* sit just below the gold border */
-    background: #1e1808;
-    border-top: 2px solid var(--gold);
-    box-shadow: 0 12px 40px rgba(0,0,0,.75);
-    z-index: 9999;          /* ← KEY FIX: high enough to clear all content */
-    animation: fadeSlide .18s ease;
-  }
-  @keyframes fadeSlide {
-    from { opacity: 0; transform: translateY(-6px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .nav-item:hover > .dropdown-panel { display: block; }
-
-  /* ─── SIMPLE DROPDOWN ─────────────────────────────────────── */
-  .simple-drop {
-    left: 0;
-    min-width: 230px;
-    padding: 10px 0;
-  }
-  .simple-drop a {
-    display: block;
-    padding: 10px 22px;
-    color: #cdc09a;
-    font-size: .72rem;
-    font-weight: 600;
-    letter-spacing: .08em;
-    text-decoration: none;
-    border-left: 3px solid transparent;
-    transition: all .15s;
-  }
-  .simple-drop a:hover { color: var(--gold-lt); background: rgba(184,148,26,.08); border-left-color: var(--gold); padding-left: 28px; }
-
-  /* ─── MEGA PANEL ──────────────────────────────────────────── */
-  /*  FIX: left:50% + translateX(-50%) centres the panel under
-      the trigger and keeps it on-screen regardless of trigger position  */
-  .mega-panel {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 820px;
-    padding: 28px 32px 24px;
-  }
-  .mega-panel.wide {
-    width: 920px;
-  }
-
-  /* Edge guards: if a mega panel would still clip right edge, pin it */
-  .nav-item:last-child .mega-panel,
-  .nav-item:nth-last-child(2) .mega-panel {
-    left: auto;
-    right: 0;
-    transform: none;
-  }
-
-  .mega-heading {
-    font-family: 'Cinzel', serif;
-    font-size: .58rem;
-    font-weight: 700;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    padding-bottom: 8px;
-    margin-bottom: 12px;
-    border-bottom: 1px solid rgba(184,148,26,.3);
-  }
-
-  .mega-cols { display: grid; gap: 28px; }
-  .mega-cols.cols-3 { grid-template-columns: repeat(3, 1fr); }
-  .mega-cols.cols-4 { grid-template-columns: repeat(4, 1fr); }
-  .mega-cols.cols-2-1 { grid-template-columns: 2fr 1fr; }
-
-  .mega-col-title {
-    font-family: 'Cinzel', serif;
-    font-size: .62rem;
-    letter-spacing: .15em;
-    color: var(--gold-lt);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-  }
-  .mega-col-title::after { content: ''; flex: 1; height: 1px; background: rgba(184,148,26,.2); }
-
-  .mega-links { list-style: none; display: flex; flex-direction: column; gap: 2px; }
-  .mega-links a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 7px 10px;
-    color: #c4b47e;
-    font-size: .7rem;
-    font-weight: 500;
-    letter-spacing: .05em;
-    text-decoration: none;
-    border-radius: 2px;
-    transition: all .15s;
-  }
-  .mega-links a .dot {
-    width: 4px; height: 4px;
-    background: var(--gold);
-    border-radius: 50%;
-    flex-shrink: 0;
-    opacity: .5;
-    transition: opacity .15s;
-  }
-  .mega-links a:hover { color: #fff; background: rgba(184,148,26,.1); }
-  .mega-links a:hover .dot { opacity: 1; }
-
-  /* ─── MEGA HIGHLIGHT CARD ─────────────────────────────────── */
-  .mega-highlight {
-    background: linear-gradient(145deg, rgba(184,148,26,.15) 0%, rgba(212,90,0,.1) 100%);
-    border: 1px solid rgba(184,148,26,.25);
-    border-radius: 4px;
-    padding: 18px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .mega-highlight .hl-tag {
-    font-family: 'Cinzel', serif;
-    font-size: .58rem;
-    letter-spacing: .2em;
-    color: var(--orange);
-    text-transform: uppercase;
-  }
-  .mega-highlight .hl-title {
-    font-family: 'Cinzel', serif;
-    font-size: .88rem;
-    color: var(--gold-lt);
-    line-height: 1.3;
-  }
-  .mega-highlight .hl-text {
-    font-size: .68rem;
-    color: #9a8650;
-    line-height: 1.5;
-    margin-top: 4px;
-  }
-  .mega-highlight .hl-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 8px;
-    font-size: .68rem;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--gold);
-    text-decoration: none;
-    transition: gap .2s;
-  }
-  .mega-highlight .hl-link:hover { gap: 10px; color: var(--gold-lt); }
-
-  /* divider between mega columns */
-  .mega-divider {
-    width: 1px;
-    background: rgba(184,148,26,.15);
-    margin: 0 4px;
-  }
-
-  /* ─── HAMBURGER (MOBILE) ──────────────────────────────────── */
-  .hamburger-btn {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 6px;
-    flex-direction: column;
-    gap: 5px;
-    margin-left: auto;
-  }
-  .hamburger-btn span {
-    display: block;
-    width: 24px; height: 2px;
-    background: var(--gold-lt);
-    border-radius: 2px;
-    transition: all .3s;
-  }
-  .hamburger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-  .hamburger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-  /* ─── MOBILE DRAWER ───────────────────────────────────────── */
-  .mobile-drawer {
-    display: none;
-    flex-direction: column;
-    background: var(--dark2);
-    overflow-y: auto;
-    max-height: calc(100vh - var(--nav-h) - var(--top-h));
-    border-top: 1px solid rgba(184,148,26,.2);
-  }
-  .mobile-drawer.open { display: flex; }
-
-  .mob-item { border-bottom: 1px solid rgba(184,148,26,.1); }
-  .mob-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 20px;
-    color: #e0d4a8;
-    font-family: 'Raleway', sans-serif;
-    font-size: .73rem;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .mob-top svg { transition: transform .25s; opacity: .7; }
-  .mob-top.expanded svg { transform: rotate(180deg); opacity: 1; color: var(--gold-lt); }
-  .mob-top.expanded { color: var(--gold-lt); }
-
-  .mob-sub {
-    display: none;
-    flex-direction: column;
-    background: rgba(0,0,0,.25);
-    padding: 4px 0 8px;
-  }
-  .mob-sub.open { display: flex; }
-  .mob-sub a {
-    padding: 10px 28px;
-    color: #a89a6a;
-    font-size: .7rem;
-    font-weight: 600;
-    letter-spacing: .07em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-left: 3px solid transparent;
-    transition: all .15s;
-  }
-  .mob-sub a:hover { color: var(--gold-lt); border-left-color: var(--gold); padding-left: 36px; }
-
-  .mob-sub-title {
-    padding: 8px 20px 4px 28px;
-    color: var(--gold);
-    font-family: 'Cinzel', serif;
-    font-size: .58rem;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    opacity: .8;
-  }
-
-  .mob-book {
-    margin: 16px 20px;
-    display: block;
-    text-align: center;
-    background: linear-gradient(135deg, var(--orange), var(--rust));
-    color: #fff;
-    font-family: 'Cinzel', serif;
-    font-size: .75rem;
-    font-weight: 700;
-    letter-spacing: .15em;
-    text-transform: uppercase;
-    padding: 13px 20px;
-    text-decoration: none;
-    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
-  }
-  .mob-contact {
-    padding: 12px 20px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .mob-contact-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #9a8650;
-    font-size: .7rem;
-  }
-  .mob-contact-item svg { color: var(--gold); flex-shrink: 0; }
-  .mob-contact-item span { color: #cbb870; font-weight: 600; }
-
-  /* ─── RESPONSIVE ──────────────────────────────────────────── */
-  @media (max-width: 1100px) {
-    .nav-list, .topbar { display: none; }
-    .topbar-wrap { display: none; }
-    .hamburger-btn { display: flex; }
-    .logo-wrap { margin-right: 0; }
-    .navbar { justify-content: space-between; }
-  }
-  @media (min-width: 1101px) {
-    .mobile-drawer { display: none !important; }
-  }
-</style>
-</head>
-<body>
-
-<!-- TOP BAR -->
-<div class="topbar" id="topbarEl">
-  <div class="topbar-item">
-    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path>
-    </svg>
-    <div class="stack">
-      <span class="label">+255 684 160 300</span>
-      <span class="sub">+255 754 893 717</span>
-    </div>
-  </div>
-  <div class="topbar-item">
-    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-    </svg>
-    <div class="stack">
-      <span class="label">Mon–Fri: 9:00AM – 5:00PM</span>
-      <span class="sub">Sat–Sun: Closed</span>
-    </div>
-  </div>
-  <a class="book-btn" href="booking-form.html">Book Now</a>
-</div>
-
+<!-- WG:GLOBAL-NAV:START -->
 <!-- STICKY NAVBAR -->
-<div class="navbar-wrap">
+<div class="navbar-wrap" id="navbarWrap">
   <nav class="navbar">
     <!-- Logo -->
     <a class="logo-wrap" href="index.html">
       <img src="assets/images/logo.png" alt="Wild Gaze Safaris Logo">
       <div class="logo-text">
-        <span class="name">Wild Gaze Safaris</span>
+        <span class="name"><span class="logo-wild">Wild</span> <span class="logo-gaze">Gaze</span> <span class="logo-safaris">Safaris</span></span>
         <span class="sub">Tanzania · Est. 2020</span>
       </div>
     </a>
@@ -549,9 +90,7 @@
               <span class="hl-tag">Featured</span>
               <span class="hl-title">Great Migration Safari</span>
               <span class="hl-text">Witness one of nature's greatest spectacles across the Serengeti plains.</span>
-              <a class="hl-link" href="safaris.html">Explore Packages
-                <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </a>
+              <a class="hl-link" href="safaris.html" aria-label="Explore safari packages"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
             </div>
           </div>
         </div>
@@ -583,10 +122,8 @@
             <div class="mega-highlight">
               <span class="hl-tag">Most Popular</span>
               <span class="hl-title">Kilimanjaro Summit</span>
-              <span class="hl-text">Africa's roof at 5,895m — the world's highest free-standing mountain awaits.</span>
-              <a class="hl-link" href="mount-kilimanjaro-trekking.html">View Routes
-                <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </a>
+              <span class="hl-text">Africa's roof at 5,895m – the world's highest free-standing mountain awaits.</span>
+              <a class="hl-link" href="mount-kilimanjaro-trekking.html" aria-label="View Kilimanjaro routes"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
             </div>
           </div>
         </div>
@@ -609,11 +146,9 @@
             <div style="grid-column: span 2;">
               <div class="mega-highlight" style="height:100%;">
                 <span class="hl-tag">Tropical Paradise</span>
-                <span class="hl-title">Zanzibar — Spice Island</span>
-                <span class="hl-text">White sand beaches, turquoise waters, and centuries of Swahili culture — the perfect safari extension.</span>
-                <a class="hl-link" href="zanzibar-island.html">Discover Zanzibar
-                  <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
+                <span class="hl-title">Zanzibar – Spice Island</span>
+                <span class="hl-text">White sand beaches, turquoise waters, and centuries of Swahili culture – the perfect safari extension.</span>
+                <a class="hl-link" href="zanzibar-island.html" aria-label="Discover Zanzibar"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
               </div>
             </div>
           </div>
@@ -736,64 +271,48 @@
     <a class="mob-book" href="booking-form.html">Book Your Safari Now</a>
 
     <div class="mob-contact">
+      <a class="mob-contact-item" href="https://wa.me/255684160300" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+        <i class="fab fa-whatsapp" style="color:#25d366;font-size:1rem;"></i>
+        <span>+255 684 160 300</span>
+      </a>
+      <a class="mob-contact-item" href="https://wa.me/255754893717" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+        <i class="fab fa-whatsapp" style="color:#25d366;font-size:1rem;"></i>
+        <span>+255 754 893 717</span>
+      </a>
       <div class="mob-contact-item">
-        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
-        <span>+255 684 160 300 &nbsp;|&nbsp; +255 754 893 717</span>
-      </div>
-      <div class="mob-contact-item">
-        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        <span>Mon–Fri: 9:00AM – 5:00PM &nbsp;|&nbsp; Sat–Sun: Closed</span>
+        <i class="fas fa-clock" style="color:var(--gold);font-size:.8rem;"></i>
+        <span>Mon–Fri: 9:00AM – 5:00PM · Sat–Sun: Closed</span>
       </div>
     </div>
 
   </div>
 </div>
 
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const drawer    = document.getElementById('mobileDrawer');
+<!-- WhatsApp contact float -->
+<div class="wg-wa-float" id="wgWaFloat">
+  <div class="wg-wa-panel" id="wgWaPanel" role="dialog" aria-label="WhatsApp contact options">
+    <div class="wg-wa-panel-head"><i class="fab fa-whatsapp"></i> Chat With Us</div>
+    <a class="wg-wa-link" href="https://wa.me/255684160300" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-whatsapp"></i>
+      <span>+255 684 160 300</span>
+    </a>
+    <a class="wg-wa-link" href="https://wa.me/255754893717" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-whatsapp"></i>
+      <span>+255 754 893 717</span>
+    </a>
+    <div class="wg-wa-hours">
+      <i class="fas fa-clock"></i>
+      <span>Mon–Fri: 9:00AM – 5:00PM · Sat–Sun: Closed</span>
+    </div>
+  </div>
+  <button class="wg-wa-toggle" id="wgWaToggle" type="button" aria-expanded="false" aria-controls="wgWaPanel" aria-label="Open WhatsApp contacts">
+    <i class="fab fa-whatsapp"></i>
+  </button>
+</div>
+<!-- WG:GLOBAL-NAV:END -->
+<script src="assets/js/wg-navbar.js" defer></script>
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    drawer.classList.toggle('open');
-  });
-
-  function toggleMob(el) {
-    const sub = el.nextElementSibling;
-    const isOpen = sub.classList.contains('open');
-    document.querySelectorAll('.mob-sub').forEach(s => s.classList.remove('open'));
-    document.querySelectorAll('.mob-top').forEach(t => t.classList.remove('expanded'));
-    if (!isOpen) {
-      sub.classList.add('open');
-      el.classList.add('expanded');
-    }
-  }
-
-  /* Prevent mega panels from overflowing the right edge of the viewport */
-  function clampMegaPanels() {
-    document.querySelectorAll('.mega-panel').forEach(panel => {
-      const rect = panel.getBoundingClientRect();
-      if (rect.right > window.innerWidth) {
-        const overflow = rect.right - window.innerWidth + 16;
-        const currentLeft = parseFloat(getComputedStyle(panel).left) || 0;
-        panel.style.left = (currentLeft - overflow) + 'px';
-        panel.style.transform = 'none';
-      }
-      if (rect.left < 0) {
-        panel.style.left = '0';
-        panel.style.transform = 'none';
-      }
-    });
-  }
-
-  document.querySelectorAll('.nav-item').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-      setTimeout(clampMegaPanels, 10);
-    });
-  });
-</script>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" class="cid-ruRnrygmuz" id="header1-ni" data-rv-view="438"><style class="cid-ruRnrygmuz" id="header1-ni" data-rv-view="438">
+<style class="cid-ruRnrygmuz" id="header1-ni" data-rv-view="438">
  
 /* ── SCOPED TOKENS ───────────────────────────────── */
 .wg-page-header {
@@ -834,7 +353,7 @@
   to { transform: scale(1); }
 }
  
-/* overlay — dark base + gold glow at bottom */
+/* overlay – dark base + gold glow at bottom */
 .wg-ph-bg::after {
   content: '';
   position: absolute;
@@ -1044,7 +563,7 @@
   </div>
 </section>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" class="cid-ruRoIAW0SR" id="counters4-nj" data-rv-view="439"><style class="cid-ruRoIAW0SR" id="counters4-nj" data-rv-view="439">
+<style class="cid-ruRoIAW0SR" id="counters4-nj" data-rv-view="439">
 /* ── SCOPED TOKENS ───────────────────────────────── */
 .wg-terms {
   --gold:        #b8941a;
@@ -1197,7 +716,7 @@
         <div class="wg-terms-num">1</div>
         <div class="wg-terms-body">
           <div class="wg-terms-title">Payment Terms</div>
-          <p class="wg-terms-text">A binding contract comes into existence when we receive your booking request and a deposit payment. A deposit of 50% of the total booking value is required to confirm the booking. Certain suppliers impose more stringent payment policies — Wild Gaze Safaris will advise you at the time of booking if additional deposit payments apply.<br><br>The balance is payable 30 days before the date of the first service. Should a client fail to remit payment within these timeframes, Wild Gaze Safaris reserves the right to treat the booking as cancelled and apply resultant penalties.</p>
+          <p class="wg-terms-text">A binding contract comes into existence when we receive your booking request and a deposit payment. A deposit of 50% of the total booking value is required to confirm the booking. Certain suppliers impose more stringent payment policies – Wild Gaze Safaris will advise you at the time of booking if additional deposit payments apply.<br><br>The balance is payable 30 days before the date of the first service. Should a client fail to remit payment within these timeframes, Wild Gaze Safaris reserves the right to treat the booking as cancelled and apply resultant penalties.</p>
         </div>
       </div>
 
@@ -1221,7 +740,7 @@
         <div class="wg-terms-num">4</div>
         <div class="wg-terms-body">
           <div class="wg-terms-title">Special Requests &amp; Important Information</div>
-          <p class="wg-terms-text">The client must advise Wild Gaze Safaris in writing — either directly or through their travel agent — of any special requests or important personal information such as dietary requirements, physical disabilities, or any need for special treatment or handling at the time of booking.<br><br>Providing this information in advance allows us to ensure your travel arrangements are tailored appropriately and every aspect of your safari is managed with the care and attention it deserves.</p>
+          <p class="wg-terms-text">The client must advise Wild Gaze Safaris in writing – either directly or through their travel agent – of any special requests or important personal information such as dietary requirements, physical disabilities, or any need for special treatment or handling at the time of booking.<br><br>Providing this information in advance allows us to ensure your travel arrangements are tailored appropriately and every aspect of your safari is managed with the care and attention it deserves.</p>
         </div>
       </div>
 
@@ -1230,547 +749,105 @@
   </div><!-- /.wg-terms-inner -->
 </section>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" class="cid-vn4gygJbpb" id="custom-html-ti" data-rv-view="440"><style class="cid-vn4gygJbpb" id="custom-html-ti" data-rv-view="440">
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<!-- WG:GLOBAL-FOOTER:START -->
+<footer class="wg-site-footer" id="wgSiteFooter" role="contentinfo">
+  <div class="wg-footer-inner">
 
-  :root {
-    --gold:      #b8941a;
-    --gold-lt:   #e8b020;
-    --gold-pale: #f5d060;
-    --orange:    #d45a00;
-    --rust:      #c0390a;
-    --dark:      #1a1408;
-    --dark2:     #26200e;
-    --dark3:     #1e1808;
-  }
+    <div class="wg-footer-grid">
+      <div class="wg-footer-brand">
+        <a class="wg-footer-logo" href="index.html">
+          <img src="assets/images/logo.png" alt="Wild Gaze Safaris" width="32" height="32">
+          <span class="wg-footer-logo-text">
+            <span class="wg-footer-logo-name">Wild Gaze Safaris</span>
+            <span class="wg-footer-logo-sub">Iringa, Tanzania · Est. 2020</span>
+          </span>
+        </a>
+        <p class="wg-footer-tagline">Family-run safari experts — Ruaha, southern circuits, Kilimanjaro and Zanzibar. Expert guides, authentic experiences.</p>
+      </div>
 
-  /* ── FOOTER WRAPPER ─────────────────────────────── */
-  .site-footer {
-    background: var(--dark3);
-    border-top: 2px solid var(--gold);
-    font-family: 'Raleway', sans-serif;
-  }
-
-  /* ── MAIN FOOTER GRID ───────────────────────────── */
-  .footer-main {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 60px 40px 48px;
-    display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
-    gap: 48px;
-  }
-
-  /* ── BRAND COL ──────────────────────────────────── */
-  .footer-brand {}
-
-  .footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    margin-bottom: 20px;
-  }
-  .footer-logo img {
-    height: 44px;
-    width: 44px;
-    object-fit: contain;
-    filter: drop-shadow(0 0 6px rgba(232,176,32,.35));
-  }
-  .footer-logo-text { display: flex; flex-direction: column; line-height: 1; }
-  .footer-logo-text .name {
-    font-family: 'Cinzel', serif;
-    color: var(--gold-lt);
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: .1em;
-  }
-  .footer-logo-text .sub {
-    font-family: 'Raleway', sans-serif;
-    color: #9a8650;
-    font-size: .55rem;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    margin-top: 3px;
-  }
-
-  .footer-tagline {
-    color: #9a8650;
-    font-size: .75rem;
-    line-height: 1.7;
-    margin-bottom: 24px;
-    max-width: 280px;
-  }
-
-  /* Payment badges */
-  .payment-title {
-    font-family: 'Cinzel', serif;
-    font-size: .55rem;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 10px;
-    opacity: .8;
-  }
-  .payment-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-  .pay-badge {
-    background: rgba(184,148,26,.12);
-    border: 1px solid rgba(184,148,26,.25);
-    border-radius: 3px;
-    padding: 5px 10px;
-    font-family: 'Cinzel', serif;
-    font-size: .6rem;
-    font-weight: 700;
-    letter-spacing: .1em;
-    color: #cbb870;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    white-space: nowrap;
-  }
-  .pay-badge svg { opacity: .75; flex-shrink: 0; }
-
-  /* ── COLUMN HEADING ─────────────────────────────── */
-  .footer-col-title {
-    font-family: 'Cinzel', serif;
-    font-size: .62rem;
-    font-weight: 700;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    color: var(--gold-lt);
-    padding-bottom: 10px;
-    margin-bottom: 18px;
-    border-bottom: 1px solid rgba(184,148,26,.25);
-  }
-
-  /* ── QUICK LINKS ─────────────────────────────────── */
-  .footer-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .footer-links a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 7px 0;
-    color: #a89a6a;
-    font-size: .72rem;
-    font-weight: 500;
-    letter-spacing: .05em;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255,255,255,.04);
-    transition: color .15s, padding-left .15s;
-  }
-  .footer-links a .arr {
-    width: 4px; height: 4px;
-    border-right: 1.5px solid var(--gold);
-    border-top: 1.5px solid var(--gold);
-    transform: rotate(45deg);
-    flex-shrink: 0;
-    opacity: .45;
-    transition: opacity .15s;
-  }
-  .footer-links a:hover { color: var(--gold-lt); padding-left: 6px; }
-  .footer-links a:hover .arr { opacity: 1; }
-
-  /* ── CONTACT COL ─────────────────────────────────── */
-  .contact-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
-  .contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    color: #a89a6a;
-    font-size: .72rem;
-    line-height: 1.5;
-  }
-  .contact-item svg {
-    color: var(--gold);
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .contact-item a {
-    color: #cbb870;
-    text-decoration: none;
-    transition: color .15s;
-  }
-  .contact-item a:hover { color: var(--gold-lt); }
-  .contact-item strong {
-    display: block;
-    color: #cbb870;
-    font-weight: 600;
-    margin-bottom: 1px;
-  }
-
-  /* Social row */
-  .social-row {
-    display: flex;
-    gap: 8px;
-    margin-top: 22px;
-  }
-  .soc-btn {
-    width: 34px; height: 34px;
-    border: 1px solid rgba(184,148,26,.3);
-    border-radius: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #9a8650;
-    text-decoration: none;
-    transition: all .2s;
-  }
-  .soc-btn:hover {
-    background: rgba(184,148,26,.12);
-    border-color: var(--gold);
-    color: var(--gold-lt);
-  }
-  .soc-btn svg { flex-shrink: 0; }
-
-  /* ── TRIPADVISOR CARD ────────────────────────────── */
-  .ta-card {
-    background: rgba(184,148,26,.07);
-    border: 1px solid rgba(184,148,26,.22);
-    border-radius: 3px;
-    padding: 18px 16px;
-  }
-  .ta-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
-  }
-  .ta-logo-wrap {
-    width: 32px; height: 32px;
-    background: #34e0a1;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .ta-logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-  }
-  .ta-logo-text .ta-name {
-    font-family: 'Cinzel', serif;
-    font-size: .6rem;
-    font-weight: 700;
-    letter-spacing: .08em;
-    color: var(--gold-lt);
-  }
-  .ta-logo-text .ta-sub {
-    font-size: .58rem;
-    color: #9a8650;
-    letter-spacing: .06em;
-  }
-
-  .ta-rating-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-  }
-  .ta-score {
-    font-family: 'Cinzel', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--gold-lt);
-    line-height: 1;
-  }
-  .ta-stars {
-    display: flex;
-    gap: 2px;
-  }
-  .ta-stars svg { fill: #34e0a1; }
-  .ta-rating-label {
-    font-size: .62rem;
-    color: #9a8650;
-    line-height: 1.4;
-  }
-  .ta-rating-label strong {
-    display: block;
-    color: #cbb870;
-    font-size: .65rem;
-    font-weight: 600;
-  }
-
-  .ta-divider {
-    height: 1px;
-    background: rgba(184,148,26,.15);
-    margin: 12px 0;
-  }
-
-  .ta-review {
-    color: #a89a6a;
-    font-size: .67rem;
-    font-style: italic;
-    line-height: 1.55;
-    margin-bottom: 10px;
-  }
-  .ta-reviewer {
-    font-size: .62rem;
-    color: #9a8650;
-    font-style: normal;
-  }
-  .ta-reviewer strong { color: #cbb870; font-weight: 600; font-style: normal; }
-
-  .ta-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: 12px;
-    font-size: .65rem;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: #34e0a1;
-    text-decoration: none;
-    transition: gap .2s;
-  }
-  .ta-link:hover { gap: 9px; }
-  .ta-link svg { flex-shrink: 0; }
-
-  /* ── FOOTER BOTTOM BAR ────────────────────────────── */
-  .footer-bottom {
-    border-top: 1px solid rgba(184,148,26,.18);
-    background: var(--dark);
-  }
-  .footer-bottom-inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 16px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .footer-copy {
-    color: #6b5a1e;
-    font-size: .67rem;
-    letter-spacing: .06em;
-  }
-  .footer-copy a {
-    color: #9a8650;
-    text-decoration: none;
-    transition: color .15s;
-  }
-  .footer-copy a:hover { color: var(--gold); }
-  .footer-bottom-links {
-    display: flex;
-    gap: 20px;
-  }
-  .footer-bottom-links a {
-    color: #6b5a1e;
-    font-size: .65rem;
-    letter-spacing: .06em;
-    text-decoration: none;
-    transition: color .15s;
-  }
-  .footer-bottom-links a:hover { color: var(--gold); }
-
-  /* ── RESPONSIVE ────────────────────────────────────── */
-  @media (max-width: 1100px) {
-    .footer-main { grid-template-columns: 1fr 1fr; gap: 36px; padding: 48px 32px 40px; }
-  }
-  @media (max-width: 640px) {
-    .footer-main { grid-template-columns: 1fr; gap: 32px; padding: 36px 20px 32px; }
-    .footer-bottom-inner { flex-direction: column; align-items: flex-start; gap: 10px; padding: 14px 20px; }
-    .payment-badges { gap: 5px; }
-  }
-</style><footer class="site-footer cid-vn4gygJbpb" id="custom-html-ti" data-rv-view="440">
-  <div class="footer-main">
-
-    <!-- COL 1 — Brand + Payment -->
-    <div class="footer-brand">
-      <a class="footer-logo" href="index.html">
-        <img src="assets/images/whatsapp20image202026-06-0720at2016.08.44-88x88.webp" alt="Wild Gaze Safaris" media-simple="true">
-        <div class="footer-logo-text">
-          <span class="name">Wild Gaze Safaris</span>
-          <span class="sub">Tanzania · Est. 2020</span>
+      <nav class="wg-footer-nav" aria-label="Explore">
+        <button class="wg-footer-nav-toggle" type="button" aria-expanded="false" aria-controls="wgFooterExplore">
+          Explore <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="wg-footer-nav-panel" id="wgFooterExplore">
+          <h4 class="wg-footer-nav-title">Explore</h4>
+          <ul>
+            <li><a href="safaris.html">Safari Packages</a></li>
+            <li><a href="mount-kilimanjaro-trekking.html">Kilimanjaro Trekking</a></li>
+            <li><a href="zanzibar-island.html">Zanzibar Holidays</a></li>
+            <li><a href="cultural-programmes.html">Cultural Tours</a></li>
+            <li><a href="birding-safaris.html">Birding Safaris</a></li>
+            <li><a href="car-rental.html">Car Rental</a></li>
+          </ul>
         </div>
-      </a>
-      <p class="footer-tagline">
-        Authentic Tanzania wildlife experiences — from the plains of Ruaha to the roof of Kilimanjaro. Family-run. Expert-led. Unforgettable.
-      </p>
-      <div class="payment-title">We Accept</div>
-      <div class="payment-badges">
-        <span class="pay-badge">
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-          Visa
-        </span>
-        <span class="pay-badge">
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-          Mastercard
-        </span>
-        <span class="pay-badge">
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-          PayPal
-        </span>
-        <span class="pay-badge">
-          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"></path><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
-          Bank Transfer
-        </span>
+      </nav>
+
+      <nav class="wg-footer-nav" aria-label="Company">
+        <button class="wg-footer-nav-toggle" type="button" aria-expanded="false" aria-controls="wgFooterCompany">
+          Company <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="wg-footer-nav-panel" id="wgFooterCompany">
+          <h4 class="wg-footer-nav-title">Company</h4>
+          <ul>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="booking-form.html">Book a Safari</a></li>
+            <li><a href="terms-condition.html">Terms &amp; Conditions</a></li>
+            <li><a href="contact-us.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="wg-footer-contact">
+        <h4 class="wg-footer-nav-title">Contact</h4>
+        <ul class="wg-footer-contact-list">
+          <li>
+            <a href="tel:+255684160300"><i class="fas fa-phone" aria-hidden="true"></i> +255 684 160 300</a>
+          </li>
+          <li>
+            <a href="tel:+255754893717"><i class="fas fa-phone" aria-hidden="true"></i> +255 754 893 717</a>
+          </li>
+          <li>
+            <a href="mailto:info@wildgazesafaris.co.tz"><i class="fas fa-envelope" aria-hidden="true"></i> info@wildgazesafaris.co.tz</a>
+          </li>
+          <li>
+            <span><i class="fas fa-location-dot" aria-hidden="true"></i> P.O. Box 1586, Iringa</span>
+          </li>
+        </ul>
+        <div class="wg-footer-social" aria-label="Social media">
+          <a href="https://web.facebook.com/wildgazesafari/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/wildgazesafaris_tanzania/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/GazeWild" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/wild-gaze-safaris-ernest-lugalla-785b1127/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="https://www.tripadvisor.com/Attraction_Review-g1602943-d15611347-Reviews-Wild_Gaze_Safaris_Ltd-Iringa_Iringa_Region.html" target="_blank" rel="noopener noreferrer" aria-label="TripAdvisor"><i class="fab fa-tripadvisor" aria-hidden="true"></i></a>
+        </div>
       </div>
     </div>
 
-    <!-- COL 2 — Quick Links -->
-    <div>
-      <div class="footer-col-title">Explore</div>
-      <ul class="footer-links">
-        <li><a href="safaris.html"><span class="arr"></span>Safari Packages</a></li>
-        <li><a href="mount-kilimanjaro-trekking.html"><span class="arr"></span>Kilimanjaro Trekking</a></li>
-        <li><a href="zanzibar-island.html"><span class="arr"></span>Zanzibar Beach Holidays</a></li>
-        <li><a href="cultural-programmes.html"><span class="arr"></span>Cultural Tours</a></li>
-        <li><a href="birding-safaris.html"><span class="arr"></span>Birding Safaris</a></li>
-        <li><a href="car-rental.html"><span class="arr"></span>Car Rental</a></li>
-        <li><a href="about-us.html"><span class="arr"></span>About Us</a></li>
-        <li><a href="faq.html"><span class="arr"></span>FAQ</a></li>
-        <li><a href="terms-condition.html"><span class="arr"></span>Booking Terms &amp; Conditions</a></li>
-      </ul>
-    </div>
-
-    <!-- COL 3 — Contact -->
-    <div>
-      <div class="footer-col-title">Contact Us</div>
-      <ul class="contact-list">
-        <li class="contact-item">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
-          <div>
-            <strong>Phone</strong>
-            <a href="tel:+255684160300">+255 684 160 300</a><br>
-            <a href="tel:+255754893717">+255 754 893 717</a>
-          </div>
-        </li>
-        <li class="contact-item">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          <div>
-            <strong>Email</strong>
-            <a href="mailto:info@wildgazesafaris.co.tz">info@wildgazesafaris.co.tz</a>
-          </div>
-        </li>
-        <li class="contact-item">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          <div>
-            <strong>Address</strong>
-            P.O. Box 1586<br>Iringa, Tanzania
-          </div>
-        </li>
-        <li class="contact-item">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          <div>
-            <strong>Office Hours</strong>
-            Mon–Fri: 9:00AM – 5:00PM<br>
-            <span style="color:#6b5a1e;">Sat–Sun: Closed</span>
-          </div>
-        </li>
-      </ul>
-
-      <!-- Social icons -->
-      <div class="social-row">
-        <a class="soc-btn" href="https://twitter.com/GazeWild" target="_blank" aria-label="Twitter / X">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg>
-        </a>
-        <a class="soc-btn" href="https://web.facebook.com/wildgazesafari/" target="_blank" aria-label="Facebook">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
-        </a>
-        <a class="soc-btn" href="https://www.instagram.com/wildgazesafaris_tanzania/" target="_blank" aria-label="Instagram">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-        </a>
-        <a class="soc-btn" href="https://www.linkedin.com/in/wild-gaze-safaris-ernest-lugalla-785b1127/" target="_blank" aria-label="LinkedIn">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        </a>
-        <a class="soc-btn" href="https://www.tripadvisor.com/Attraction_Review-g1602943-d15611347-Reviews-Wild_Gaze_Safaris_Ltd-Iringa_Iringa_Region.html" target="_blank" aria-label="TripAdvisor">
-          <!-- TripAdvisor owl icon approximation -->
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7.5" cy="13.5" r="3.5"></circle><circle cx="16.5" cy="13.5" r="3.5"></circle><path d="M4 9.5C4 9.5 2 7 2 5.5a2 2 0 012-2h16a2 2 0 012 2C22 7 20 9.5 20 9.5"></path><path d="M12 6l-2 3.5M12 6l2 3.5"></path><circle cx="7.5" cy="13.5" r="1.5" fill="currentColor" stroke="none"></circle><circle cx="16.5" cy="13.5" r="1.5" fill="currentColor" stroke="none"></circle></svg>
-        </a>
+    <div class="wg-footer-certs">
+      <p class="wg-footer-certs-title">Licensed &amp; Trusted</p>
+      <div class="wg-footer-certs-grid">
+        <div class="wg-footer-cert"><i class="fas fa-certificate" aria-hidden="true"></i><div><strong>TATO Member</strong><span>Tour Operators Association</span></div></div>
+        <div class="wg-footer-cert"><i class="fas fa-circle-check" aria-hidden="true"></i><div><strong>TTB Registered</strong><span>Tourist Board Licensed</span></div></div>
+        <div class="wg-footer-cert"><i class="fab fa-tripadvisor" aria-hidden="true"></i><div><strong>5.0 Excellent</strong><span>Traveller Reviews</span></div></div>
       </div>
     </div>
 
-    <!-- COL 4 — TripAdvisor Rating Card -->
-    <div>
-      <div class="footer-col-title">Reviews</div>
-      <div class="ta-card">
-        <div class="ta-header">
-          <div class="ta-logo-wrap">
-            <svg width="18" height="18" viewBox="0 0 32 32" fill="none">
-              <!-- Simplified owl dots for TripAdvisor -->
-              <circle cx="10" cy="18" r="6" fill="#000" opacity=".85"></circle>
-              <circle cx="22" cy="18" r="6" fill="#000" opacity=".85"></circle>
-              <circle cx="10" cy="18" r="3" fill="#fff"></circle>
-              <circle cx="22" cy="18" r="3" fill="#fff"></circle>
-              <circle cx="10" cy="18" r="1.5" fill="#000"></circle>
-              <circle cx="22" cy="18" r="1.5" fill="#000"></circle>
-              <path d="M6 12C6 12 4 9 4 7.5A3.5 3.5 0 017.5 4h17A3.5 3.5 0 0128 7.5C28 9 26 12 26 12" stroke="#000" stroke-width="2" fill="none"></path>
-              <path d="M16 8L14 12M16 8L18 12" stroke="#000" stroke-width="1.5"></path>
-            </svg>
-          </div>
-          <div class="ta-logo-text">
-            <span class="ta-name">TripAdvisor</span>
-            <span class="ta-sub">Wild Gaze Safaris Ltd</span>
-          </div>
-        </div>
-
-        <div class="ta-rating-row">
-          <span class="ta-score">5.0</span>
-          <div class="ta-stars">
-            <svg width="13" height="13" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-            <svg width="13" height="13" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-            <svg width="13" height="13" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-            <svg width="13" height="13" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-            <svg width="13" height="13" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-          </div>
-          <div class="ta-rating-label">
-            <strong>Excellent</strong>
-            Traveller Rated
-          </div>
-        </div>
-
-        <div class="ta-divider"></div>
-
-        <p class="ta-review">
-          "Ernest and his team were incredible — professional, knowledgeable and so passionate about Tanzania. Ruaha completely blew us away."
-        </p>
-        <span class="ta-reviewer"><strong>Sarah M.</strong> — United Kingdom, 2025</span>
-
-        <br>
-        <a class="ta-link" href="https://www.tripadvisor.com/Attraction_Review-g1602943-d15611347-Reviews-Wild_Gaze_Safaris_Ltd-Iringa_Iringa_Region.html" target="_blank">
-          Read All Reviews
-          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
+    <div class="wg-footer-bottom">
+      <p class="wg-footer-copy">&copy; 2026 Wild Gaze Safaris Ltd. All rights reserved.</p>
+      <div class="wg-footer-bottom-links">
+        <a href="terms-condition.html">Terms</a>
+        <a href="contact-us.html">Contact</a>
+        <a href="booking-form.html">Book Now</a>
       </div>
     </div>
 
   </div>
-
-  <!-- Bottom bar -->
-  <div class="footer-bottom">
-    <div class="footer-bottom-inner">
-      <p class="footer-copy">
-        © 2026 Wild Gaze Safaris Ltd. All rights reserved. &nbsp;·&nbsp;
-        Powered by <a href="http://king-agency.com" target="_blank">King Agency</a>
-      </p>
-      <div class="footer-bottom-links">
-        <a href="#">Terms &amp; Conditions</a>
-        <a href="#">Privacy Policy</a>
-        <a href="contact-us.html">Contact Us</a>
-      </div>
-    </div>
-  </div>
-</footer><section><a href="https://mobiri.se"></a><a href="https://mobiri.se"></a></section><script src="assets/popper/popper.min.js"></script>  <script src="assets/web/assets/jquery/jquery.min.js"></script>  <script src="assets/bootstrap/js/bootstrap.min.js"></script>  <script src="assets/tether/tether.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/theme/js/script.js"></script>  
+</footer>
+<script src="assets/js/wg-footer.js" defer></script>
+<!-- WG:GLOBAL-FOOTER:END -->
+<script src="assets/js/wg-motion.js"></script>
+<script src="assets/js/wg-lightbox.js"></script>  
   
   
 
